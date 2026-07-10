@@ -515,7 +515,7 @@
     /* experience counter (restrained, once) */
     var counter = document.getElementById("experience-counter");
     if (counter) {
-      var target = parseInt(counter.getAttribute("data-count-to"), 10) || 16;
+      var target = parseInt(counter.getAttribute("data-count-to"), 10) || 18;
       var proxy = { value: 0 };
       gsap.to(proxy, {
         value: target, duration: 1.5, ease: "power2.out",
