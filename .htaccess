@@ -22,9 +22,12 @@
   AddType font/woff2 .woff2
 </IfModule>
 
-# Force HTTPS once an SSL certificate is active on the domain
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteCond %{HTTPS} off
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
-</IfModule>
+# Force HTTPS -- DISABLED by default so the site works the moment you upload.
+# ONLY enable this AFTER an SSL certificate is active on the domain
+# (in cPanel: SSL/TLS Status -> Run AutoSSL). To enable, remove the "#"
+# from the four lines below. Enabling it before SSL exists breaks the site.
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteCond %{HTTPS} off
+#   RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
+# </IfModule>
